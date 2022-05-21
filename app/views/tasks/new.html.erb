@@ -1,0 +1,13 @@
+<h2>Task new</h2>
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.label :details, "Details" %>
+  <%= f.text_field :details %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Home", tasks_path %>
