@@ -1,13 +1,15 @@
-<h2>Task new</h2>
+<div class="container">
+  <h2 class="d-flex justify-content-center m-5">NEW TASK</h2>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %>
+  <%= form_for(@task) do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
 
-  <%= f.label :details, "Details" %>
-  <%= f.text_field :details %>
+    <%= f.label :details, "Details" %>
+    <%= f.text_field :details %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
 
-<%= link_to "Home", tasks_path %>
+  <%= link_to "Home", tasks_path %>
+</div>

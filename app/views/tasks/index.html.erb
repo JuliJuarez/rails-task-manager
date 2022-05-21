@@ -1,12 +1,21 @@
-<h1>My tasks</h1>
+<div class="container">
+  <h1 class="d-flex justify-content-center m-5">MY TASKS</h1>
 
-<% @tasks.each do |task| %>
-  <h3> <%= link_to task.title, task_path(task)%>
-   ||
-    <small><%= link_to "Delete",
-                  task_path(task.id),
-                  method: :delete,
-                  data: { confirm: "Are you sure??" } %></small></h3>
-<% end %>
+  <% @tasks.each do |task| %>
+    <h3>
+      <% if task.completed %>
+        <i class="fa fa-square-check"></i>
+      <% else %>
+        <i class="fa fa-square"></i>
+      <% end %>
 
-<%= link_to "New Task", new_task_path %>
+      <%= link_to task.title, task_path(task) %>
+
+      <%= link_to task_path(task.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+    </h3>
+  <% end %>
+
+  <%= link_to "New Task", new_task_path %>
+<div>
